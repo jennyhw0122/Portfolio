@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   <title>Portfolio</title>
 </head>
 <header class="portfolio-header">
     <div class="header-container">
       <h1 class="logo">
         <a href="/" aria-label="Home">
-          <img src="/assets/logo.svg" alt="Portfolio Logo" />
+          <img src="/assets/logo.svg" alt="Portfolio" />
         </a>
       </h1>
-  
       <nav class="main-nav">
         <ul class="menu-list">
           <li><a href="#home">Home</a></li>
@@ -20,19 +22,27 @@
           <li><a href="#about">About</a></li>
         </ul>
       </nav>
-  
       <div class="header-actions">
-        <div class="theme-label">Theme</div>
-        <select id="theme-toggle" class="theme-select" aria-label="Theme toggle">
-          <option value="light">Light <span class="iconify" data-icon="twemoji:sun"></span></option>
-          <option value="dark">Dark <span class="iconify" data-icon="twemoji:waning-crescent-moon"></span></option>
-        </select>
+        <button id="theme-button" class="theme-button"> Theme <span id="arrow-icon" class="iconify" data-icon="ic:round-keyboard-arrow-down"></span></button>
+        <div id="theme-dropdown" class="theme-dropdown">
+          <ul>
+            <li>
+              <a href="#" class="theme-option" data-theme="light">Light</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="theme-option" data-theme="dark">Dark</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </header>
 
 <body>
-
+    
+    <script src="js/theme-toggle.js"></script>
 </body>
 <footer></footer>
 </html>

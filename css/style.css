@@ -1,0 +1,42 @@
+:root {
+    /* Color Variables */
+    --color-primary: #FF6905;
+    --color-accent: #1640a4;
+    --color-bg-light: #d7dbe3;
+    --color-bg-dark: #243037;
+    --color-bg-gradient: linear-gradient(135deg, #FF6905 0%, #FFD580 100%);
+    --color-text-primary: #243037;
+    --color-text-muted: #666666;
+    --color-border: #e2e2e2;
+  
+    /* Font Variables */
+    --font-family-base: 'Pretendard', 'Apple SD Gothic Neo', system-ui, sans-serif;
+    --font-family-mono: 'Courier New', monospace;
+  
+    --font-size-xs: 0.75rem;     /* 12px */
+    --font-size-sm: 0.875rem;    /* 14px */
+    --font-size-base: 1rem;      /* 16px */
+    --font-size-md: 1.125rem;    /* 18px */
+    --font-size-lg: 1.25rem;     /* 20px */
+    --font-size-xl: 1.5rem;      /* 24px */
+    --font-size-2xl: 2rem;       /* 32px */
+    --font-size-3xl: 3rem;       /* 48px */
+    --font-size-4xl: 4rem;       /* 64px */
+    --font-size-hero: clamp(2.5rem, 5vw, 4rem); /* responsive title */
+  
+    /* Spacing Variables */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+  }
+
+  *, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

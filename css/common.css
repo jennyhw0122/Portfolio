@@ -1,36 +1,141 @@
-:root {
-    /* Color Variables */
-    --color-primary: #FF6905;
-    --color-accent: #07956C;
-    --color-bg-light: #D0DDE0;
-    --color-bg-dark: #243037;
-    --color-bg-gradient: linear-gradient(135deg, #FF6905 0%, #FFD580 100%);
-    --color-text-primary: #243037;
-    --color-text-muted: #666666;
-    --color-border: #CCCCCC;
-  
-    /* Font Variables */
-    --font-family-base: 'Pretendard', 'Apple SD Gothic Neo', system-ui, sans-serif;
-    --font-family-mono: 'Courier New', monospace;
-  
-    --font-size-xs: 0.75rem;     /* 12px */
-    --font-size-sm: 0.875rem;    /* 14px */
-    --font-size-base: 1rem;      /* 16px */
-    --font-size-md: 1.125rem;    /* 18px */
-    --font-size-lg: 1.25rem;     /* 20px */
-    --font-size-xl: 1.5rem;      /* 24px */
-    --font-size-2xl: 2rem;       /* 32px */
-    --font-size-3xl: 3rem;       /* 48px */
-    --font-size-4xl: 4rem;       /* 64px */
-    --font-size-hero: clamp(2.5rem, 5vw, 4rem); /* responsive title */
-  
-    /* Spacing Variables */
-    --spacing-xxs: 4px;
-    --spacing-xs: 8px;
-    --spacing-sm: 12px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-2xl: 48px;
-    --spacing-3xl: 64px;
+.portfolio-header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: var(--spacing-md) 0;
+}
+
+:root[data-theme="dark"] .portfolio-header {
+  background: rgba(18, 18, 18, 0.2);
+  border-bottom: 1px solid rgba(18, 18, 18, 0.3);
+}
+
+/* 헤더 컨테이너 */
+.header-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+}
+
+/* 로고 */
+.logo img {
+  height: 40px;
+  transition: opacity 0.3s;
+}
+
+.logo {
+  margin-right: var(--spacing-md);
+}
+
+/* 내비게이션 메뉴 */
+.main-nav .menu-list {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-xl);
+  margin-left: var(--spacing-md);
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-list li a:hover {
+  color: var(--color-primary);
+}
+
+/* 헤더 액션 영역 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* "AI Products" 버튼 */
+.theme-button {
+  font-size: 1rem;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+  position: relative;
+}
+
+/* 버튼 활성화 시(드롭다운 열림) 하단 흰색 선 추가 */
+.theme-button.active {
+  border-bottom: 1px solid #ffffff;
+}
+
+/* 테마 드롭다운 */
+.theme-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + var(--spacing-xs));
+  right: 0;
+  background: var(--color-bg);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  z-index: 1001;
+}
+
+.theme-dropdown.show {
+  display: block;
+}
+
+.theme-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.theme-dropdown li {
+  margin: 0;
+  padding: 0;
+}
+
+.theme-dropdown .theme-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.theme-dropdown .theme-option:hover {
+  background: #ffffff;
+  color: var(--color-primary);
+}
+
+.theme-dropdown .iconify {
+  font-size: 1rem;
+  margin-left: var(--spacing-xs);
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 var(--spacing-sm);
   }
+  .menu-list {
+    gap: var(--spacing-md);
+  }
+}
